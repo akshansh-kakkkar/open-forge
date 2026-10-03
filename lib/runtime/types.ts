@@ -1,0 +1,9 @@
+export type Location = "reactor_room" | "storage_room" | "corridor" | "security";
+export type FuseLocation = Location | "player" | "maya";
+export type ReactorState = "unstable" | "repaired";
+export type Action = "move" | "pickup" | "talk" | "inspect" | "repair";
+export type World = { reactor: ReactorState; fuse: FuseLocation; player: Location; maya: Location; alex: Location };
+export type Memory = { id: string; text: string; importance: number; timestamp: string };
+export type Event = { id: string; text: string; timestamp: string; tone?: "alert" | "success" | "neutral" };
+export type Decision = { thought: string; action: Action; target: string; plan: string[] };
+export type ToolCall = { name: Action; target: string; result: string; timestamp: string };
